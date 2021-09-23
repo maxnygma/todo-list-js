@@ -4,10 +4,8 @@ var todoList = document.querySelector(".todo-list");
 var deleteAllButton = document.querySelector(".clear-tasks");
 var bottomTitle = document.querySelector(".bottom-title");
 inputBox.onkeyup = function () {
-    var getLocalStorage = localStorage.getItem("New Todo");
-    var listArr = JSON.parse(getLocalStorage);
     var userData = inputBox.value;
-    if (userData.trim().length != 0 && listArr.length < 8) {
+    if (userData.trim().length != 0) {
         addButton.classList.add("active");
     }
     else {

@@ -5,11 +5,9 @@ const deleteAllButton = document.querySelector(".clear-tasks") as HTMLButtonElem
 const bottomTitle = document.querySelector(".bottom-title") as HTMLSpanElement
 
 inputBox.onkeyup = () => {
-    let getLocalStorage = localStorage.getItem("New Todo")
-    let listArr = JSON.parse(getLocalStorage)
     let userData = inputBox.value
 
-    if (userData.trim().length != 0 && listArr.length < 8) {
+    if (userData.trim().length != 0) {
         addButton.classList.add("active")
     }
     else {
