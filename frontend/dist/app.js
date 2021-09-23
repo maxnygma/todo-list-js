@@ -2,6 +2,7 @@ var inputBox = document.querySelector(".task-input input");
 var addButton = document.querySelector(".task-input button");
 var todoList = document.querySelector(".todo-list");
 var deleteAllButton = document.querySelector(".clear-tasks");
+var bottomTitle = document.querySelector(".bottom-title");
 inputBox.onkeyup = function () {
     var userData = inputBox.value;
     if (userData.trim().length != 0) {
@@ -39,6 +40,7 @@ var showTasks = function () {
     listArr.forEach(function (element, index) {
         newTag += "<li> " + element + " <span onclick=\"deleteTask(" + index + ")\" class=\"material-icons delete-icon\">delete</span></li>";
     });
+    bottomTitle.textContent = "You have " + listArr.length + " pending events";
     todoList.innerHTML = newTag;
     inputBox.value = "";
 };

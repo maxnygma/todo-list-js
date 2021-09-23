@@ -2,6 +2,7 @@ const inputBox = document.querySelector(".task-input input") as HTMLInputElement
 const addButton = document.querySelector(".task-input button") as HTMLButtonElement
 const todoList = document.querySelector(".todo-list") as HTMLUListElement
 const deleteAllButton = document.querySelector(".clear-tasks") as HTMLButtonElement
+const bottomTitle = document.querySelector(".bottom-title") as HTMLSpanElement
 
 inputBox.onkeyup = () => {
     let userData = inputBox.value
@@ -48,6 +49,8 @@ let showTasks = () => {
     listArr.forEach((element: string, index: number) => {
         newTag += `<li> ${element} <span onclick="deleteTask(${index})" class="material-icons delete-icon">delete</span></li>`
     })
+
+    bottomTitle.textContent = `You have ${listArr.length} pending events`
 
     todoList.innerHTML = newTag
     inputBox.value = ""
