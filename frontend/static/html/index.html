@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/home/xzcodes/projects/web/todo-list/frontend/static/css/index.css">
+</head>
+<body>
+    <section class="section-center">
+        <p class="alert"></p>
+        <h2 class="section-title">TODO List</h2>
+        <div class="task-input">
+            <input type="text" id="task-input-field" placeholder="e.g. go to gym">
+            <button class="add-task">
+                <span class="material-icons add-icon">
+                    add
+                </span>
+            </button>
+        </div>
+
+        <section class="todo-list-section">
+            <ul class="todo-list">
+                <!-- Data comes from local storage -->
+            </ul>
+        </section>
+
+        <section class="bottom-section">
+            <span class="bottom-title">You have 0 pending events</span>
+            <button class="clear-tasks">
+                Clear all
+            </button>
+        </section>
+    </section>
+    
+    <script src="/home/xzcodes/projects/web/todo-list/frontend/dist/app.js"></script>
+</body>
+</html>
