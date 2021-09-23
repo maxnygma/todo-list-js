@@ -28,6 +28,8 @@ addButton.onclick = () => {
     listArr.push(userData)
     localStorage.setItem("New Todo", JSON.stringify(listArr))
 
+    addButton.classList.remove("active")
+
     showTasks()
 }
 
