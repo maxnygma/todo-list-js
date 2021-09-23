@@ -71,6 +71,7 @@ body {
     flex-direction: column;
     padding: 0 0 0 1vw;
     flex: 1;
+    overflow-y: scroll;
 }
 
 .todo-list {
@@ -85,10 +86,15 @@ body {
 }
 
 .todo-list li span {
-    position: absolute;
-    right: 55px;
+    position: relative;
+    left: 55px;
     background-color: rgba(235, 13, 13, 0.877);
     color: white;
+}
+
+.todo-list li div {
+    width: 10vw;
+    min-width: 120px;
 }
 
 .delete-icon {

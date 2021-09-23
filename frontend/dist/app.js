@@ -4,8 +4,10 @@ var todoList = document.querySelector(".todo-list");
 var deleteAllButton = document.querySelector(".clear-tasks");
 var bottomTitle = document.querySelector(".bottom-title");
 inputBox.onkeyup = function () {
+    var getLocalStorage = localStorage.getItem("New Todo");
+    var listArr = JSON.parse(getLocalStorage);
     var userData = inputBox.value;
-    if (userData.trim().length != 0) {
+    if (userData.trim().length != 0 && listArr.length < 8) {
         addButton.classList.add("active");
     }
     else {
@@ -38,7 +40,7 @@ var showTasks = function () {
     }
     var newTag = '';
     listArr.forEach(function (element, index) {
-        newTag += "<li> " + element + " <span onclick=\"deleteTask(" + index + ")\" class=\"material-icons delete-icon\">delete</span></li>";
+        newTag += "<li> <div>" + element + "</div> <span onclick=\"deleteTask(" + index + ")\" class=\"material-icons delete-icon\">delete</span></li>";
     });
     bottomTitle.textContent = "You have " + listArr.length + " pending events";
     todoList.innerHTML = newTag;

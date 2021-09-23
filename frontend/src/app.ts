@@ -5,8 +5,11 @@ const deleteAllButton = document.querySelector(".clear-tasks") as HTMLButtonElem
 const bottomTitle = document.querySelector(".bottom-title") as HTMLSpanElement
 
 inputBox.onkeyup = () => {
+    let getLocalStorage = localStorage.getItem("New Todo")
+    let listArr = JSON.parse(getLocalStorage)
     let userData = inputBox.value
-    if (userData.trim().length != 0) {
+
+    if (userData.trim().length != 0 && listArr.length < 8) {
         addButton.classList.add("active")
     }
     else {
@@ -47,7 +50,7 @@ let showTasks = () => {
 
     let newTag = ''
     listArr.forEach((element: string, index: number) => {
-        newTag += `<li> ${element} <span onclick="deleteTask(${index})" class="material-icons delete-icon">delete</span></li>`
+        newTag += `<li> <div>${element}</div> <span onclick="deleteTask(${index})" class="material-icons delete-icon">delete</span></li>`
     })
 
     bottomTitle.textContent = `You have ${listArr.length} pending events`
